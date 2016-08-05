@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Hello Electron React!</title>
+  <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="./vendor/css/photon.css" media="screen" charset="utf-8">
+  <link rel="stylesheet" href="./_assets/css/index.css" media="screen" charset="utf-8">
+  <script>
+    (function() {
+      if (!process.env.HOT) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = '../dist/style.css';
+        document.write(link.outerHTML);
+      }
+    }());
+  </script>
+</head>
+
+<body>
+
+  <div class="header-arrow"></div>
+  <div class="window">
+      <div id="root"></div>
+  </div>
+
+  <script>
+    (function() {
+      const script = document.createElement('script');
+      script.src = (process.env.HOT) ? 'http://localhost:3000/dist/bundle.js' : '../dist/bundle.js';
+      document.write(script.outerHTML);
+    }());
+  </script>
+</body>
+
+</html>
